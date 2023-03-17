@@ -55,7 +55,8 @@ exports.createMultipleQr = async (req, res) => {
                 });
             }
             let date = new Date();
-            let zippath = 'static/' + date.getTime() + '-' + date.getUTCDate();
+            let t = date.getTime() + '-' + date.getUTCDate();
+            let zippath = 'static/' + t;
             fs.mkdir(zippath, {
                 recursive: true
             }, async err => {
@@ -89,9 +90,12 @@ exports.createMultipleQr = async (req, res) => {
                 archive.directory(zippath, false);
                 archive.finalize();
                 output.on('close', () => {
-                    res.sendFile(zippath+'/output.zip', {
-                        root: path.join(__dirname, '..')
-                    });
+                    // res.sendFile(zippath+'/output.zip', {
+                    //     root: path.join(__dirname, '..')
+                    // });
+                    res.status(200).send({
+                        path: path.join(__dirname, '..')+'\\'+'static\\' + t +'\\output.zip'
+                    })
                 });
                 archive.on('error', (err) => {
                     res.status(500).send({
@@ -142,6 +146,27 @@ exports.getAllTickets = async (req, res) => {
         });
     })
 }
+exports.resetTickets = async (req, res) => {
+    const  id  = req.body.id; // assuming the id is passed in the request parameters
+    await Ticket.findByPk(id).then(async (ticket) => {
+        if (!ticket) {
+            return res.status(404).send({
+                message: "Ticket not found"
+            });
+        }
+        ticket.visited = 0;
+        await ticket.save();
+        return res.status(200).send({
+            message: "Ticket reset successfully"
+        });
+    }).catch((error) => {
+        return res.status(500).send({
+            message: "Error resetting ticket",
+            error: error
+        });
+    });
+}
+
 
 exports.getTicketById = async (req, res) => {
     if (req.params.id == undefined) {

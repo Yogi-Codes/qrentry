@@ -10,7 +10,7 @@ var corsOptions = {
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
-
+app.use(express.static('static/'))
 db.sequelize.sync({force: true}).then(() => {
     console.log("Connected");
 }).catch((err) => {

@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.dcbfc446.css",
+    "main.js": "/static/js/main.4b9d14e9.js",
+    "static/media/white-logo.png": "/static/media/white-logo.f854d637d770e2f5c5c4.png",
+    "static/media/product.svg": "/static/media/product.273824ad510b1946e3bf481c0581e6ce.svg",
+    "static/media/settings.svg": "/static/media/settings.9397f24aeef3aee302d5f608adb1dd9b.svg",
+    "index.html": "/index.html",
+    "static/media/shipping.svg": "/static/media/shipping.a9e6b8f89589387690bf35f9c4a690ea.svg",
+    "static/media/dashboard.svg": "/static/media/dashboard.5f874f71463e66998e016f71a14b8dbc.svg",
+    "static/media/user.svg": "/static/media/user.d8bc220e4938b5e080429f7cc252dc46.svg",
+    "static/media/notification.svg": "/static/media/notification.9736b29d361e50fe895dd9034bfb1ac1.svg",
+    "static/media/cancel.svg": "/static/media/cancel.6e742bac04a1c57d5aa0abcce1c6800b.svg",
+    "static/media/refunded.svg": "/static/media/refunded.dadcf5d102f5e1642e41c8f08b4591ba.svg",
+    "static/media/done.svg": "/static/media/done.00f12b556bb1aaa9dcafdf32bbbe7c71.svg",
+    "main.dcbfc446.css.map": "/static/css/main.dcbfc446.css.map",
+    "main.4b9d14e9.js.map": "/static/js/main.4b9d14e9.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dcbfc446.css",
+    "static/js/main.4b9d14e9.js"
+  ]
+}

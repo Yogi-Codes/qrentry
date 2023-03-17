@@ -20,8 +20,11 @@ module.exports = (app) => {
         middleware.isAdmin
     ], controller.createMultipleQr);
     app.get('/tickets', [
-        middleware.isAdmin
+        middleware.isBouncer
     ], controller.getAllTickets)
+    app.post('/reset', [
+        middleware.isAdmin
+    ], controller.resetTickets)
     app.get('/ticket/:id', [
         middleware.isAdmin
     ], controller.getTicketById);
