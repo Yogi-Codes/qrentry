@@ -1,4 +1,4 @@
-# myfoodbox-backend
+# QrEntry APP
 
 1. change database credentials under config section.
 2. start MYSQL server and add the corresponding table to it.
